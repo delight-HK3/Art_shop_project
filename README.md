@@ -4,6 +4,8 @@
 사용한 언어 : php7, javascript, css<br>
 사용한 DB : mariaDB<br>
 <br>
+프로젝트 분류 : 개별 프로젝트<br>
+<br>
 제작한 목적 : 지금까지는 codeigniter 프레임워크를 사용했지만 php언어만 숙달하기위해 제작하였습니다, 쿠키를 활용한 기본적인 장바구니, 주문, 제품보기등의 기능을 codeigniter 없이 만들어보았습니다.
 <br>
 
