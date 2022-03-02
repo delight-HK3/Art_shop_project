@@ -1,15 +1,15 @@
-<?
+<?php
 	@extract($_POST);
 	@extract($_GET);
 	@extract($_COOKIE);
 	include "common.php";
 
 	$kind = $_REQUEST [kind];
-	$cart=$_COOKIE[cart]; //Àå¹Ù±¸´Ï Á¦Ç° Á¤º¸ ÄíÅ°
-	$n_cart=$_COOKIE[n_cart]; //Àå¹Ù±¸´Ï Á¦Ç° Ä«Æ® ³Ñ¹ö ÄíÅ°
+	$cart=$_COOKIE[cart]; //ìž¥ë°”êµ¬ë‹ˆ ì œí’ˆ ì •ë³´ ì¿ í‚¤
+	$n_cart=$_COOKIE[n_cart]; //ìž¥ë°”êµ¬ë‹ˆ ì œí’ˆ ì¹´íŠ¸ ë„˜ë²„ ì¿ í‚¤
 	
 	if (!$n_cart){
-		$n_cart=0; //Àå¹Ù±¸´Ï Á¦Ç°°³¼ö ÃÊ±âÈ­
+		$n_cart=0; //ìž¥ë°”êµ¬ë‹ˆ ì œí’ˆê°œìˆ˜ ì´ˆê¸°í™”
 	}
 	switch($kind){
 		case "insert":{
