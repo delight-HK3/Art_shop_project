@@ -3,20 +3,20 @@
 <!--                                                                                        -->
 <!-- 만 든 이 : 윤형태 (2008.2 - 2017.12)                                                    -->
 <!-------------------------------------------------------------------------------------------->	
-<?
+<?php
 	@extract($_POST);
 	@extract($_GET);
 	@extract($_COOKIE);
 ?>
 <html>
-<head>
-<title>Cookie</title>
-</head>
-<body>
+	<head>
+		<title>Cookie</title>
+	</head>
+	<body>
 
-저장된 cookie값은 <font color="blue"><?=$cookie_value ?></font>입니다.
-&nbsp;&nbsp
-<a href="cookie.html">돌아가기</a>
+	저장된 cookie값은 <font color="blue"><?php echo $cookie_value ?></font>입니다.
+	&nbsp;&nbsp
+	<a href="cookie.html">돌아가기</a>
 
-</body>
+	</body>
 </html>
