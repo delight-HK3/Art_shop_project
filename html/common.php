@@ -2,7 +2,7 @@
 	error_reporting(E_ALL&~E_NOTICE&~E_WARNING);
 	ini_set("display_errors",1);
 	
-	$db= mysqli_connect("localhost","shop11","1234","shop11");
+	$db= mysqli_connect("<DB IP / localhost>", "<DB id>", "<DB password>", "<DB name>");
 	if (!$db){
 		exit("DB연결에러");
 	}
@@ -28,8 +28,8 @@
 	$a_order=array("","주문번호","고객명","제품명");
 	$n_order=count($a_order); 
 
-	$admin_id="admin";
-	$admin_pw="1234";
+	$admin_id="";
+	$admin_pw="";
 	
 	$page_line =5; //페이지당 line 수
 	$page_block=5; //블록당 page 수
