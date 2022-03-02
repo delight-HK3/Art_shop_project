@@ -12,6 +12,7 @@
 ### 주의사항
 <ul>
   <li>이미지는 admin 페이지에서 추가가 가능하니 admin 페이지에서 추가하시기 바랍니다.</li>
+  <li>common.php 파일의 $admin_id, $admin_pw에 임의의 값을 넣어 admin페이지의 아이디와 비밀번호를 설정해주시기 바랍니다.</li>
 </ul>
 <br>
 
