@@ -1,4 +1,4 @@
-<?
+<?php
 	@extract($_POST);
 	@extract($_GET);
 	@extract($_COOKIE);
