@@ -1,130 +1,128 @@
 <html>
 	<title>Happy Art Shop</title>
 	<head>
-    <meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="author" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.83.1">
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/">
-    <link href="include/css/bootstrap.min.css" rel="stylesheet">
-	<link href="include/css/carousel.css" rel="stylesheet">
-	<link rel="stylesheet" href="include/css/bootstrap.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<script src="http://code.jquery.com/jquery.js"></script>
-	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <!-- Favicons -->
-	<link href="include/css/signin.css" rel="stylesheet">
-	<meta name="theme-color" content="#7952b3">
-	<style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="author" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+		<meta name="generator" content="Hugo 0.83.1">
+		<link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/">
+		<link href="include/css/bootstrap.min.css" rel="stylesheet">
+		<link href="include/css/carousel.css" rel="stylesheet">
+		<link rel="stylesheet" href="include/css/bootstrap.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<script src="http://code.jquery.com/jquery.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		
+	    	<!-- Favicons -->
+		<link href="include/css/signin.css" rel="stylesheet">
+		<meta name="theme-color" content="#7952b3">
+		<style>
+		      .bd-placeholder-img {
+			font-size: 1.125rem;
+			text-anchor: middle;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			user-select: none;
+		      }
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-	  HTML {
-			height: 100%;
-		}
-		BODY {
-			min-height: 100%;
-			background-image: url("images/Happy_Art_Shop/background.jpg");
-			background-position: center ;
-			background-repeat: no-repeat;
-			background-size: cover;
-		}
-		.card {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		z-index: 1;
-        margin: 0 auto; /* Added */
-        float: none; /* Added */
-        margin-bottom: 10px; /* Added */
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	}
-	
-	.form-signin .form-control {
-  		position: relative;
-  		height: auto;
-  		-webkit-box-sizing: border-box;
-     	-moz-box-sizing: border-box;
-		box-sizing: border-box;
-  		padding: 4px;
-  		font-size: 14px;
-	}
-    </style>
-</head>
+		      @media (min-width: 768px) {
+			.bd-placeholder-img-lg {
+			  font-size: 3.5rem;
+			}
+		      }
+			  HTML {
+					height: 100%;
+				}
+				BODY {
+					min-height: 100%;
+					background-image: url("images/Happy_Art_Shop/background.jpg");
+					background-position: center ;
+					background-repeat: no-repeat;
+					background-size: cover;
+				}
+				.card {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				z-index: 1;
+			margin: 0 auto; /* Added */
+			float: none; /* Added */
+			margin-bottom: 10px; /* Added */
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			}
+
+			.form-signin .form-control {
+				position: relative;
+				height: auto;
+				-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+				box-sizing: border-box;
+				padding: 4px;
+				font-size: 14px;
+			}
+		</style>
+		<script language = "javascript">
+			function FindZip(zip_kind) 
+			{
+				window.open("zipcode.php?zip_kind="+zip_kind, "", "scrollbars=no,width=500,height=250");
+			}
+			function search_id(){
+				if (!form2.uid.value) {
+					alert("ID를 입력하십시요.");	
+					form2.uid.focus();	
+					return;
+				}
+				window.open("member_idcheck.php?uid="+form2.uid.value,"","scrollbars=no,width=300,height=200");
+			}
+			function Check_Value() {
+				if (!form2.check_id.value) {
+					alert("중복ID 조사를 먼저 하십시요.");	form2.uid.focus();	return;
+				}
+				if (!form2.uid.value) {
+					alert("아이디가 잘못되었습니다.");	form2.uid.focus();	return;
+				}
+				if (!form2.pwd.value) {
+					alert("암호가 잘못되었습니다.");	form2.pwd.focus();	return;
+				}
+				if (!form2.pwd1.value) {
+					alert("암호가 잘못되었습니다.");	form2.pwd1.focus();	return;
+				}
+				if (form2.pwd.value != form2.pwd1.value) {
+					alert("암호가 일치하지 않습니다.");	
+					form2.pwd.focus();	return;
+				}
+				if (!form2.birthday1.value || !form2.birthday2.value || !form2.birthday3.value) {
+					alert("생일이 잘못되었습니다.");	form2.birthday1.focus();	return;
+				}
+				if (!form2.tel1.value || !form2.tel2.value || !form2.tel3.value) {
+					alert("전화번호가 잘못되었습니다.");	form2.tel1.focus();	return;
+				}
+				if (!form2.phone1.value || !form2.phone2.value || !form2.phone3.value) {
+					alert("핸드폰이 잘못되었습니다.");	form2.phone1.focus();	return;
+				}
+				if (!form2.zip.value) {
+					alert("우편번호가 잘못되었습니다.");	form2.zip.focus();	return;
+				}
+				if (!form2.juso.value) {
+					alert("주소가 잘못되었습니다.");	form2.juso.focus();	return;
+				}
+				if (!form2.email.value) {
+					alert("이메일이 잘못되었습니다.");	form2.email.focus();	return;
+				}
+				form2.submit();
+			}
+		</script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script type="text/javascript" src="include/js/bootstrap.js"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	</head>
 	<body>
-	
-	<script language = "javascript">
-		function FindZip(zip_kind) 
-		{
-			window.open("zipcode.php?zip_kind="+zip_kind, "", "scrollbars=no,width=500,height=250");
-		}
-		function search_id(){
-			if (!form2.uid.value) {
-				alert("ID를 입력하십시요.");	
-				form2.uid.focus();	
-				return;
-			}
-			window.open("member_idcheck.php?uid="+form2.uid.value,"","scrollbars=no,width=300,height=200");
-		}
-		function Check_Value() {
-			if (!form2.check_id.value) {
-				alert("중복ID 조사를 먼저 하십시요.");	form2.uid.focus();	return;
-			}
-			if (!form2.uid.value) {
-				alert("아이디가 잘못되었습니다.");	form2.uid.focus();	return;
-			}
-			if (!form2.pwd.value) {
-				alert("암호가 잘못되었습니다.");	form2.pwd.focus();	return;
-			}
-			if (!form2.pwd1.value) {
-				alert("암호가 잘못되었습니다.");	form2.pwd1.focus();	return;
-			}
-			if (form2.pwd.value != form2.pwd1.value) {
-				alert("암호가 일치하지 않습니다.");	
-				form2.pwd.focus();	return;
-			}
-			if (!form2.birthday1.value || !form2.birthday2.value || !form2.birthday3.value) {
-				alert("생일이 잘못되었습니다.");	form2.birthday1.focus();	return;
-			}
-			if (!form2.tel1.value || !form2.tel2.value || !form2.tel3.value) {
-				alert("전화번호가 잘못되었습니다.");	form2.tel1.focus();	return;
-			}
-			if (!form2.phone1.value || !form2.phone2.value || !form2.phone3.value) {
-				alert("핸드폰이 잘못되었습니다.");	form2.phone1.focus();	return;
-			}
-			if (!form2.zip.value) {
-				alert("우편번호가 잘못되었습니다.");	form2.zip.focus();	return;
-			}
-			if (!form2.juso.value) {
-				alert("주소가 잘못되었습니다.");	form2.juso.focus();	return;
-			}
-			if (!form2.email.value) {
-				alert("이메일이 잘못되었습니다.");	form2.email.focus();	return;
-			}
-			form2.submit();
-		}
-	</script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script type="text/javascript" src="include/js/bootstrap.js"></script>
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-
-
 		<div class="form-signin">
 			<div class="card align-middle" style="width:50rem; height:69rem; border-radius:30px;">
 				<div class="card-title" align="center" style="margin-top:10px;" >
