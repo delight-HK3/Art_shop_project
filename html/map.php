@@ -1,9 +1,4 @@
-<!-------------------------------------------------------------------------------------------->	
-<!-- 프로그램 : 쇼핑몰 따라하기 실습지시서 (실습용 HTML)                                    -->
-<!--                                                                                        -->
-<!-- 만 든 이 : 윤형태 (2008.2 - 2017.12)                                                    -->
-<!-------------------------------------------------------------------------------------------->	
-<?
+<?php
 	include "common.php";
 ?>
 <html>
@@ -59,48 +54,44 @@
 			}
 			
 		</style>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+		<script type="text/javascript" src="include/js/bootstrap.js"></script>
 	</head>
-<body style="margin:0">
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-<script type="text/javascript" src="include/js/bootstrap.js"></script>
+	<body style="margin:0">
+		<center>
+		<!--상단 로고 및 메뉴 ----------------------------------->
+			<?php
+				include "main_top.php";
+			?>
+		<!--상단 로고 및 메뉴 끝----------------------------------->
 
-<center>
-<!--상단 로고 및 메뉴 ----------------------------------->
-	<?
-		include "main_top.php";
-	?>
-<!--상단 로고 및 메뉴 끝----------------------------------->
+		<!-------------------------------------------------------------------------------------------->	
+		<!-- 시작 : 다른 웹페이지 삽입할 부분                                                       -->
+		<!-------------------------------------------------------------------------------------------->	
+			<div class="container">
+				<h1><b>찾아오는 길</b></h1>
+				<h5>실제 제품을 보고 싶은 고객님은 매장을 방문해 주시기 바랍니다.</h5><br>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1878.8086154985615!2d127.05551026480602!3d37.63117150476848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2a334389e7cd7a44!2z7J24642V64yA7ZWZ6rWQ!5e0!3m2!1sko!2skr!4v1622682216700!5m2!1sko!2skr" width="800" height="600" style="border:0; "  allowfullscreen="" loading="lazy"></iframe><br><br>
+				<div class="row" style="width:700px; height:30px">
+					<img src="images/Happy_Art_Shop/subway.png" style="width:30px; height:30px; float:left">
+					<h5 style="float:left; text-align: center">&nbsp지하철 : 월계역 3번출구에서 10분 도보이동</h5>
+				</div><br>
+				<div class="row" style="width:700px; height:30px">
+					<img src="images/Happy_Art_Shop/front-of-bus.png" style="width:30px; height:30px; float:left">
+					<h5 style="float:left; text-align: center">&nbsp버스 : 광운대 역 하차 후 1133, 1130 버스 탑승 후 인덕대학교에서 하차 </h5>
+				</div><br>
+			</div>
+		<!-------------------------------------------------------------------------------------------->	
+		<!-- 끝 : 다른 웹페이지 삽입할 부분                                                         -->
+		<!-------------------------------------------------------------------------------------------->	
+		<br><br><br>
 
-<!-------------------------------------------------------------------------------------------->	
-<!-- 시작 : 다른 웹페이지 삽입할 부분                                                       -->
-<!-------------------------------------------------------------------------------------------->	
-	<div class="container">
-		<h1><b>찾아오는 길</b></h1>
-		<h5>실제 제품을 보고 싶은 고객님은 매장을 방문해 주시기 바랍니다.</h5><br>
-		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1878.8086154985615!2d127.05551026480602!3d37.63117150476848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2a334389e7cd7a44!2z7J24642V64yA7ZWZ6rWQ!5e0!3m2!1sko!2skr!4v1622682216700!5m2!1sko!2skr" width="800" height="600" style="border:0; "  allowfullscreen="" loading="lazy"></iframe><br><br>
-		<div class="row" style="width:700px; height:30px">
-			<img src="images/Happy_Art_Shop/subway.png" style="width:30px; height:30px; float:left">
-			<h5 style="float:left; text-align: center">&nbsp지하철 : 월계역 3번출구에서 10분 도보이동</h5>
-		</div><br>
-
-		<div class="row" style="width:700px; height:30px">
-			<img src="images/Happy_Art_Shop/front-of-bus.png" style="width:30px; height:30px; float:left">
-			<h5 style="float:left; text-align: center">&nbsp버스 : 광운대 역 하차 후 1133, 1130 버스 탑승 후 인덕대학교에서 하차 </h5>
-		</div><br>
-	</div>
-<!-------------------------------------------------------------------------------------------->	
-<!-- 끝 : 다른 웹페이지 삽입할 부분                                                         -->
-<!-------------------------------------------------------------------------------------------->	
-<br><br><br>
-
-<!-- 화면 하단 부분 시작 (main_bottom) : 회사정보/회사소개/이용정보/개인보호정책 ... ---------->
-<?
-	include "main_bottom.php";
-?>
-<!-- 화면 하단 부분 끝 (main_bottom) : 회사정보/회사소개/이용정보/개인보호정책 ... ---------->
-
-&nbsp
-
-</body>
+		<!-- 화면 하단 부분 시작 (main_bottom) : 회사정보/회사소개/이용정보/개인보호정책 ... ---------->
+			<?php
+				include "main_bottom.php";
+			?>
+		<!-- 화면 하단 부분 끝 (main_bottom) : 회사정보/회사소개/이용정보/개인보호정책 ... ---------->
+		&nbsp
+	</body>
 </html>
