@@ -1,4 +1,4 @@
-<?
+<?php
 	include "common.php";
 	$uid=$_REQUEST[uid];
 	$name=$_REQUEST[name];
