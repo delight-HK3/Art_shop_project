@@ -1,9 +1,4 @@
-<!-------------------------------------------------------------------------------------------->	
-<!-- 프로그램 : 쇼핑몰 따라하기 실습지시서 (실습용 HTML)                                    -->
-<!--                                                                                        -->
-<!-- 만 든 이 : 윤형태 (2008.2 - 2017.12)                                                    -->
-<!-------------------------------------------------------------------------------------------->	
-<?
+<?php
 	include "common.php";
 	
 	$o_name=$_REQUEST[o_name];
@@ -123,23 +118,10 @@
 				appearance: none;
 			}
 		</style>
-	</head>
-<body style="margin:0">
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-<script type="text/javascript" src="include/js/bootstrap.js"></script>
-<center>
-<!--상단 로고 및 메뉴 ----------------------------------->
-	<?
-		include "main_top.php";
-	?>
-<!--상단 로고 및 메뉴 끝----------------------------------->
-
-<!-------------------------------------------------------------------------------------------->	
-<!-- 시작 : 다른 웹페이지 삽입할 부분                                                       -->
-<!-------------------------------------------------------------------------------------------->	
-	<script language="javascript">
-
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+		<script type="text/javascript" src="include/js/bootstrap.js"></script>
+		<script language="javascript">
 			function Check_Value() 
 			{
 				if (form2.pay_method[0].checked)
@@ -219,8 +201,19 @@
 					form2.bank_sender.disabled = false;
 				}
 			}
-			</script>
+		</script>
+	</head>
+	<body style="margin:0">
+		<center>
+		<!--상단 로고 및 메뉴 ----------------------------------->
+			<?php
+				include "main_top.php";
+			?>
+		<!--상단 로고 및 메뉴 끝----------------------------------->
 
+		<!-------------------------------------------------------------------------------------------->	
+		<!-- 시작 : 다른 웹페이지 삽입할 부분                                                       -->
+		<!-------------------------------------------------------------------------------------------->	
 		<div class="container">
 			<br><br><br><br>
 			<div class="row">
@@ -251,7 +244,7 @@
 				<h4 class="col-md-1" style="width:160"><b>합계</b></h4>
 			</div>
 			<hr style="margin-top:0">
-			<?
+			<?php
 				if (!$n_cart){ 
 						$n_cart=0;
 				}
@@ -315,7 +308,7 @@
 			<hr style="margin-bottom:0">
 				<div style="background-color:#f4f4f4; height:70">
 					<div id="total">
-					<?
+					<?php
 						if($total < $max_baesongbi)
 						{
 							$Secondtotal=$total + $baesongbi ;
@@ -439,17 +432,17 @@
 			</div>
 		</div>
 		
-<!-------------------------------------------------------------------------------------------->	
-<!-- 끝 : 다른 웹페이지 삽입할 부분                                                         -->
-<!-------------------------------------------------------------------------------------------->	
-<br><br><br><br><br><br>
-<!-- 화면 하단 부분 시작 (main_bottom) : 회사정보/회사소개/이용정보/개인보호정책 ... ---------->
-<?
-	include "main_bottom.php";
-?>
-<!-- 화면 하단 부분 끝 (main_bottom) : 회사정보/회사소개/이용정보/개인보호정책 ... ---------->
+	<!-------------------------------------------------------------------------------------------->	
+	<!-- 끝 : 다른 웹페이지 삽입할 부분                                                         -->
+	<!-------------------------------------------------------------------------------------------->	
+	<br><br><br><br><br><br>
+	<!-- 화면 하단 부분 시작 (main_bottom) : 회사정보/회사소개/이용정보/개인보호정책 ... ---------->
+	<?php
+		include "main_bottom.php";
+	?>
+	<!-- 화면 하단 부분 끝 (main_bottom) : 회사정보/회사소개/이용정보/개인보호정책 ... ---------->
 
-&nbsp
+	&nbsp
 
-</body>
+	</body>
 </html>
