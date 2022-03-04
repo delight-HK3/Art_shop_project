@@ -1,4 +1,4 @@
-<?
+<?php
 	include "common.php";
 	$pwd1=$_REQUEST[pwd1];
 	$pwd2=$_REQUEST[pwd2];
