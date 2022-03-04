@@ -1,4 +1,4 @@
-<?
+<?php
 	include "common.php";
 	$cart=$_COOKIE[cart]; 
 	$n_cart=$_COOKIE[n_cart];
