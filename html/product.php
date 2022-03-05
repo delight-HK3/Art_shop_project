@@ -1,9 +1,4 @@
-<!-------------------------------------------------------------------------------------------->	
-<!-- 프로그램 : 쇼핑몰 따라하기 실습지시서 (실습용 HTML)                                    -->
-<!--                                                                                        -->
-<!-- 만 든 이 : 윤형태 (2008.2 - 2017.12)                                                    -->
-<!-------------------------------------------------------------------------------------------->	
-<?
+<?php
 	include "common.php";
 	$menu=$_REQUEST[menu];
 	$query="select * from product where menu11 = $menu and status11=1 order by no11 ";
@@ -59,112 +54,108 @@
 				font-size: 14px;
 			}
 		</style>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+		<script type="text/javascript" src="include/js/bootstrap.js"></script>
 	</head>
-<body style="margin:0">
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-<script type="text/javascript" src="include/js/bootstrap.js"></script>
+	<body style="margin:0">
+		<center>
+		<!--상단 로고 및 메뉴 ----------------------------------->
+			<?
+				include "main_top.php";
+			?>
+		<!--상단 로고 및 메뉴 끝----------------------------------->
 
+	<!-------------------------------------------------------------------------------------------->	
+	<!-- 시작 : 다른 웹페이지 삽입할 부분                                                       -->
+	<!-------------------------------------------------------------------------------------------->	
+		<br><br>
+		<?php
+			if($menu == 1){
+				echo("<h1><font style='vertical-align: inherit;'><b>물감</b></font></h1>");
+				echo("<p><font style='vertical-align: inherit;'>총 <b>$count</b> 개의 물감을 구비 하고있습니다.</font></p>");
+				echo("<br>");
+			}
+			else if($menu == 2){
 
+				echo("<h1><font style='vertical-align: inherit;'><strong>색연필</strong></font></h1>");
+				echo("<p><font style='vertical-align: inherit;'>총 <b>$count</b> 개의 색연필을 고객님께 판매하고 있습니다.</font></p>");
+				echo("<br>");
+			}
+			else if($menu == 3){
+				echo("<h1><font style='vertical-align: inherit;'><strong>붓</strong></font></h1>");
+				echo("<p><font style='vertical-align: inherit;'>총 <b>$count</b> 개의 붓을 고객님께 판매하고 있습니다.</font></p>");
+				echo("<br>");
+			}
+			else if($menu == 4){
+				echo("<h1><font style='vertical-align: inherit;'><b>마카</b></font></h1>");
+				echo("<p><font style='vertical-align: inherit;'>총 <b>$count</b> 개의 마카를 고객님께 판매하고 있습니다.</font></font></p>");
+				echo("<br>");
+			}
+			else if($menu == 5){
+				echo("<h1><font style='vertical-align: inherit;'><b>용지</b></font></h1>");
+				echo("<p><font style='vertical-align: inherit;'>총 <b>$count</b> 개의 용지를 고객님께 판매하고 있습니다.</font></font></p>");
+				echo("<br>");
+			}
+			else if($menu == 6){
+				echo("<h1><font style='vertical-align: inherit;'><b>부재료</b></font></h1>");
+				echo("<p><font style='vertical-align: inherit;'>총 <b>$count</b> 개의 부재료를 고객님께 판매하고 있습니다.</font></p>");
+				echo("<br>");
+			}
+		?>
 
-<center>
-<!--상단 로고 및 메뉴 ----------------------------------->
-	<?
-		include "main_top.php";
-	?>
-<!--상단 로고 및 메뉴 끝----------------------------------->
+		<div class="container">
+			<ul class="nav nav-tabs" id="myTab">
+			  <li class="nav-item active">
+				<a class="nav-link" data-toggle="tab" href="#qwe"><font color="#009FDC">신상품순 정렬</font></a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#asd"><font color="#009FDC">고가격순 정렬</font></a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#zxc"><font color="#009FDC">저가격순 정렬</font></a>
+			  </li>
+			   <li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#product"><font color="#009FDC">상품명순 정렬</font></a>
+			  </li>
+			</ul>
 
-<!-------------------------------------------------------------------------------------------->	
-<!-- 시작 : 다른 웹페이지 삽입할 부분                                                       -->
-<!-------------------------------------------------------------------------------------------->	
-	<br><br>
-	<?
-		if($menu == 1){
-			echo("<h1><font style='vertical-align: inherit;'><b>물감</b></font></h1>");
-			echo("<p><font style='vertical-align: inherit;'>총 <b>$count</b> 개의 물감을 구비 하고있습니다.</font></p>");
-			echo("<br>");
-		}
-		else if($menu == 2){
-			
-			echo("<h1><font style='vertical-align: inherit;'><strong>색연필</strong></font></h1>");
-			echo("<p><font style='vertical-align: inherit;'>총 <b>$count</b> 개의 색연필을 고객님께 판매하고 있습니다.</font></p>");
-			echo("<br>");
-		}
-		else if($menu == 3){
-			echo("<h1><font style='vertical-align: inherit;'><strong>붓</strong></font></h1>");
-			echo("<p><font style='vertical-align: inherit;'>총 <b>$count</b> 개의 붓을 고객님께 판매하고 있습니다.</font></p>");
-			echo("<br>");
-		}
-		else if($menu == 4){
-			echo("<h1><font style='vertical-align: inherit;'><b>마카</b></font></h1>");
-			echo("<p><font style='vertical-align: inherit;'>총 <b>$count</b> 개의 마카를 고객님께 판매하고 있습니다.</font></font></p>");
-			echo("<br>");
-		}
-		else if($menu == 5){
-			echo("<h1><font style='vertical-align: inherit;'><b>용지</b></font></h1>");
-			echo("<p><font style='vertical-align: inherit;'>총 <b>$count</b> 개의 용지를 고객님께 판매하고 있습니다.</font></font></p>");
-			echo("<br>");
-		}
-		else if($menu == 6){
-			echo("<h1><font style='vertical-align: inherit;'><b>부재료</b></font></h1>");
-			echo("<p><font style='vertical-align: inherit;'>총 <b>$count</b> 개의 부재료를 고객님께 판매하고 있습니다.</font></p>");
-			echo("<br>");
-		}
-	?>
-
-	<div class="container">
-		<ul class="nav nav-tabs" id="myTab">
-		  <li class="nav-item active">
-			<a class="nav-link" data-toggle="tab" href="#qwe"><font color="#009FDC">신상품순 정렬</font></a>
-		  </li>
-		  <li class="nav-item">
-			<a class="nav-link" data-toggle="tab" href="#asd"><font color="#009FDC">고가격순 정렬</font></a>
-		  </li>
-		  <li class="nav-item">
-			<a class="nav-link" data-toggle="tab" href="#zxc"><font color="#009FDC">저가격순 정렬</font></a>
-		  </li>
-		   <li class="nav-item">
-			<a class="nav-link" data-toggle="tab" href="#product"><font color="#009FDC">상품명순 정렬</font></a>
-		  </li>
-		</ul>
-
-		<div class="tab-content">
-			<div class="tab-pane active" id="qwe"><br><br><br><br>
-				<?
-					include "sort/productNew.php";
-				?>
+			<div class="tab-content">
+				<div class="tab-pane active" id="qwe"><br><br><br><br>
+					<?php
+						include "sort/productNew.php";
+					?>
+				</div>
+				<div class="tab-pane" id="asd"><br><br><br><br>
+					<?php
+						include "sort/productHigh.php";
+					?>
+				</div>
+				<div class="tab-pane" id="zxc"><br><br><br><br>
+					<?php
+						include "sort/productLow.php";
+					?>
+				</div>
+				<div class="tab-pane" id="product"><br><br><br><br>
+					<?php
+						include "sort/productName.php";
+					?>
+				</div>
 			</div>
-			<div class="tab-pane" id="asd"><br><br><br><br>
-				<?
-					include "sort/productHigh.php";
-				?>
-			</div>
-			<div class="tab-pane" id="zxc"><br><br><br><br>
-				<?
-					include "sort/productLow.php";
-				?>
-			</div>
-			<div class="tab-pane" id="product"><br><br><br><br>
-				<?
-					include "sort/productName.php";
-				?>
-			</div>
+
 		</div>
+		<br><br><br><br>
+	<!-------------------------------------------------------------------------------------------->	
+	<!-- 끝 : 다른 웹페이지 삽입할 부분                                                         -->
+	<!-------------------------------------------------------------------------------------------->	
+	<br><br><br>
 
-	</div>
-	<br><br><br><br>
-<!-------------------------------------------------------------------------------------------->	
-<!-- 끝 : 다른 웹페이지 삽입할 부분                                                         -->
-<!-------------------------------------------------------------------------------------------->	
-<br><br><br>
+	<!-- 화면 하단 부분 시작 (main_bottom) : 회사정보/회사소개/이용정보/개인보호정책 ... ---------->
+	<?php
+		include "main_bottom.php";
+	?>
+	<!-- 화면 하단 부분 끝 (main_bottom) : 회사정보/회사소개/이용정보/개인보호정책 ... ---------->
 
-<!-- 화면 하단 부분 시작 (main_bottom) : 회사정보/회사소개/이용정보/개인보호정책 ... ---------->
-<?
-	include "main_bottom.php";
-?>
-<!-- 화면 하단 부분 끝 (main_bottom) : 회사정보/회사소개/이용정보/개인보호정책 ... ---------->
-
-&nbsp
-
-</body>
+	&nbsp
+	</body>
 </html>
