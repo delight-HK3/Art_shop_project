@@ -1,9 +1,4 @@
-<!-------------------------------------------------------------------------------------------->	
-<!-- 프로그램 : 쇼핑몰 따라하기 실습지시서 (실습용 HTML)                                    -->
-<!--                                                                                        -->
-<!-- 만 든 이 : 윤형태 (2008.2 - 2017.12)                                                    -->
-<!-------------------------------------------------------------------------------------------->	
-<?
+<?php
 	include "common.php";
 	$findtext=$_REQUEST[findtext];
 	$query = "select * from product where name11 like '%$findtext%' order by name11;";
@@ -59,122 +54,119 @@
 				font-size: 14px;
 			}
 		</style>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+		<script type="text/javascript" src="include/js/bootstrap.js"></script>
+		<script language="javascript">
+			function SearchProduct() {
+				form2.submit();
+			}
+		</script>
 	</head>
-<body style="margin:0">
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-<script type="text/javascript" src="include/js/bootstrap.js"></script>
+	<body style="margin:0">
+		<center>
+		<!--상단 로고 및 메뉴 ----------------------------------->
+			<?
+				include "main_top.php";
+			?>
+		<!--상단 로고 및 메뉴 끝----------------------------------->
 
-
-
-<center>
-<!--상단 로고 및 메뉴 ----------------------------------->
-	<?
-		include "main_top.php";
-	?>
-<!--상단 로고 및 메뉴 끝----------------------------------->
-
-<!-------------------------------------------------------------------------------------------->	
-<!-- 시작 : 다른 웹페이지 삽입할 부분                                                       -->
-<!-------------------------------------------------------------------------------------------->	
-	<script language="javascript">
-		function SearchProduct() {
-			form2.submit();
-		}
-	</script>
+		<!-------------------------------------------------------------------------------------------->	
+		<!-- 시작 : 다른 웹페이지 삽입할 부분                                                       -->
+		<!-------------------------------------------------------------------------------------------->	
 
 	<br><br><br>
 	<div class="container">
 		
 		<h1><b>검색결과</b></h1>
-		<h4><b>"<?=$findtext?>"</b> 이름으로 총 <b><?=$count?></b>개 의 제품이 검색되었습니다.</h4><br><br>
+		<h4><b>"<?php echo $findtext;?>"</b> 이름으로 총 <b><?=$count?></b>개 의 제품이 검색되었습니다.</h4><br><br>
 	
-	<?
-		$num_col=4;   $num_row=10;                   // column수, row수
-		$page_line=$num_col*$num_row;
-		$count=mysqli_num_rows($result);           // 출력할 제품 개수 7개
-		$icount = 0;
-		
-		echo("<div class='container'>");
-		for ($ir=0; $ir<$num_row; $ir++)
-		{
-			echo("<div class='row'>");
-			for ($ic=0;  $ic<$num_col;  $ic++)
-			{
-				if ($icount < $count){
-					$row=mysqli_fetch_array($result);
-					$price = number_format($row[price11]);
-					$saleprice = round($row[price11]*(100-$row[discount11])/100);
-					$disprice = number_format($saleprice);
+		<?php
+			$num_col=4;   $num_row=10;                   // column수, row수
+			$page_line=$num_col*$num_row;
+			$count=mysqli_num_rows($result);           // 출력할 제품 개수 7개
+			$icount = 0;
 
-					if($row[icon_new11]==1){
-						$tmp=array("<h4 class='font-weight-bold mb-4 bg-info'><font color='2C93C5'>New</font></h4>",
-									"<h5>$price 원</h5>");
-						
-						if($row[icon_hit11]==1){
-							$tmp=array("<h4 class='font-weight-bold mb-4 bg-danger'>New <font color='FF3333'>Hit</font></h4>",
-									   "<h5>$price 원</h5>");
+			echo("<div class='container'>");
+			for ($ir=0; $ir<$num_row; $ir++)
+			{
+				echo("<div class='row'>");
+				for ($ic=0;  $ic<$num_col;  $ic++)
+				{
+					if ($icount < $count){
+						$row=mysqli_fetch_array($result);
+						$price = number_format($row[price11]);
+						$saleprice = round($row[price11]*(100-$row[discount11])/100);
+						$disprice = number_format($saleprice);
+
+						if($row[icon_new11]==1){
+							$tmp=array("<h4 class='font-weight-bold mb-4 bg-info'><font color='2C93C5'>New</font></h4>",
+										"<h5>$price 원</h5>");
+
+							if($row[icon_hit11]==1){
+								$tmp=array("<h4 class='font-weight-bold mb-4 bg-danger'>New <font color='FF3333'>Hit</font></h4>",
+										   "<h5>$price 원</h5>");
+							}
+							if($row[icon_sale11]==1){
+								$tmp=array("<h4 class='font-weight-bold mb-4 bg-success'>New <font color='2ca368'>Sale</font> $row[discount11]%</h4>",
+										   "<h5><strike>$price 원</strike></h5>",
+										   "<h5>$disprice 원</h5>");
+							}
+							if($row[icon_hit11]==1 && $row[icon_sale11]==1){
+								$tmp=array("<h4 class='font-weight-bold mb-4 bg-success'>New Hit <font color='2ca368'>Sale</font> $row[discount11]%</h4>",
+										   "<h5><strike>$price 원</strike></h5>",
+										   "<h5>$disprice 원</h5>");
+							}
 						}
-						if($row[icon_sale11]==1){
-							$tmp=array("<h4 class='font-weight-bold mb-4 bg-success'>New <font color='2ca368'>Sale</font> $row[discount11]%</h4>",
-									   "<h5><strike>$price 원</strike></h5>",
-									   "<h5>$disprice 원</h5>");
+						if($row[icon_new11]==0){
+							if($row[icon_hit11]==1){
+								$tmp=array("<h4 class='font-weight-bold mb-4 bg-danger'><font color='FF3333'>Hit</font></h4>",
+										   "<h5>$price 원</h5>");
+							}
+							if($row[icon_sale11]==1){
+								$tmp=array("<h4 class='font-weight-bold mb-4 bg-success'><font color='2ca368'>Sale</font> $row[discount11]%</h4>",
+										   "<h5><strike>$price 원</strike></h5>",
+										   "<h5>$disprice 원</h5>");
+							}
+							if($row[icon_hit11]==1 && $row[icon_sale11]==1){
+								$tmp=array("<h4 class='font-weight-bold mb-4 bg-success'>Hit <font color='2ca368'>Sale</font> $row[discount11]%</h4>",
+										   "<h5><strike>$price 원</strike></h5>",
+										   "<h5>$disprice 원</h5>");
+							}
 						}
-						if($row[icon_hit11]==1 && $row[icon_sale11]==1){
-							$tmp=array("<h4 class='font-weight-bold mb-4 bg-success'>New Hit <font color='2ca368'>Sale</font> $row[discount11]%</h4>",
-									   "<h5><strike>$price 원</strike></h5>",
-									   "<h5>$disprice 원</h5>");
-						}
+						$icon=implode(" ",$tmp);
+						echo("<div class='col-sm-3'>
+								<div class='card' style='margin-bottom:30px'>
+									<a href='product_detail.php?no=$row[no11]'><img class='img-thumbnail' width='250' height='250' style='margin-top:10px' src='product/$row[image1_11]' alt='Card image cap'></a>
+									<a href='product_detail.php?no=$row[no11]'><h5><b>$row[name11]</b></h5></a>
+									$icon
+								</div>
+							</div>");
 					}
-					if($row[icon_new11]==0){
-						if($row[icon_hit11]==1){
-							$tmp=array("<h4 class='font-weight-bold mb-4 bg-danger'><font color='FF3333'>Hit</font></h4>",
-									   "<h5>$price 원</h5>");
-						}
-						if($row[icon_sale11]==1){
-							$tmp=array("<h4 class='font-weight-bold mb-4 bg-success'><font color='2ca368'>Sale</font> $row[discount11]%</h4>",
-									   "<h5><strike>$price 원</strike></h5>",
-									   "<h5>$disprice 원</h5>");
-						}
-						if($row[icon_hit11]==1 && $row[icon_sale11]==1){
-							$tmp=array("<h4 class='font-weight-bold mb-4 bg-success'>Hit <font color='2ca368'>Sale</font> $row[discount11]%</h4>",
-									   "<h5><strike>$price 원</strike></h5>",
-									   "<h5>$disprice 원</h5>");
-						}
+					else{
+						echo("<td></td>");      // 제품 없는 경우
 					}
-					$icon=implode(" ",$tmp);
-					echo("<div class='col-sm-3'>
-							<div class='card' style='margin-bottom:30px'>
-								<a href='product_detail.php?no=$row[no11]'><img class='img-thumbnail' width='250' height='250' style='margin-top:10px' src='product/$row[image1_11]' alt='Card image cap'></a>
-								<a href='product_detail.php?no=$row[no11]'><h5><b>$row[name11]</b></h5></a>
-								$icon
-							</div>
-						</div>");
+					$icount++;
 				}
-				else{
-					echo("<td></td>");      // 제품 없는 경우
-				}
-				$icount++;
+				echo("</div>");
 			}
 			echo("</div>");
-		}
-		echo("</div>");
+		?>
+
+		</div>
+		<br><br><br><br>
+	<!-------------------------------------------------------------------------------------------->	
+	<!-- 끝 : 다른 웹페이지 삽입할 부분                                                         -->
+	<!-------------------------------------------------------------------------------------------->	
+	<br><br><br>
+
+	<!-- 화면 하단 부분 시작 (main_bottom) : 회사정보/회사소개/이용정보/개인보호정책 ... ---------->
+	<?php
+		include "main_bottom.php";
 	?>
+	<!-- 화면 하단 부분 끝 (main_bottom) : 회사정보/회사소개/이용정보/개인보호정책 ... ---------->
 
-	</div>
-	<br><br><br><br>
-<!-------------------------------------------------------------------------------------------->	
-<!-- 끝 : 다른 웹페이지 삽입할 부분                                                         -->
-<!-------------------------------------------------------------------------------------------->	
-<br><br><br>
+	&nbsp
 
-<!-- 화면 하단 부분 시작 (main_bottom) : 회사정보/회사소개/이용정보/개인보호정책 ... ---------->
-<?
-	include "main_bottom.php";
-?>
-<!-- 화면 하단 부분 끝 (main_bottom) : 회사정보/회사소개/이용정보/개인보호정책 ... ---------->
-
-&nbsp
-
-</body>
+	</body>
 </html>
