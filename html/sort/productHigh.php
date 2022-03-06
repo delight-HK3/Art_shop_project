@@ -1,4 +1,4 @@
-<?
+<?php
 	$query="select * from product where menu11 = $menu and status11=1 order by price11 desc";
 	$result=mysqli_query($db,$query); //sql 실행
 	if (!$result){
