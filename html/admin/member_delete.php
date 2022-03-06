@@ -1,4 +1,4 @@
-<?
+<?php
 	include "../common.php";
 
 	$no=$_REQUEST[no];
