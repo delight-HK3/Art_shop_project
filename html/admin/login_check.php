@@ -1,4 +1,4 @@
-<?
+<?php
 	include"../common.php";
 	
 	$adminid=$_REQUEST[adminid];
