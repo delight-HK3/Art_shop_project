@@ -15,7 +15,6 @@
 				this.document.images["big"].src = strImage;
 			}
 		</script>
-		<script> document.write(menu());</script>
 	</head>
 	<body style="margin:0">
 		<form name="form1" method="post" action="product_update.php" enctype="multipart/form-data">
@@ -27,7 +26,7 @@
 			<input type="hidden" name="page" value="<?php echo $page?>">
 			<input type="hidden" name="no" value="<?php echo $no?>">
 			<center>
-			<br><br><br>
+			<br><script> document.write(menu());</script><br><br>
 			<table width="800" border="1" cellpadding="2" style="border-collapse:collapse">
 				<?php
 					$query="select * from product where no11 = $no;";
