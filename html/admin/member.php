@@ -18,11 +18,10 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 		<link rel="stylesheet" href="include/font.css">
 		<script language="JavaScript" src="include/common.js"></script>
-		<script> document.write(menu());</script>
 	</head>
 	<body style="margin:0">
 		<center>
-		<br>
+		<br><script> document.write(menu());</script>
 		<table width="800" border="0">
 			<form name="form1" method="post" action="member.php">
 				<tr height="40">
