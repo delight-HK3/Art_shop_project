@@ -1,4 +1,4 @@
-<?
+<?php
 	include "../common.php";
 	
 	$sel1=$_REQUEST[sel1];
