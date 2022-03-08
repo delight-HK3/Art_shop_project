@@ -26,7 +26,6 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 		<link rel="stylesheet" href="include/font.css">
 		<script language="JavaScript" src="include/common.js"></script>
-		<script> document.write(menu());</script>
 		<script>
 			function go_update(no,pos)
 			{
@@ -41,7 +40,7 @@
 	</head>
 	<body style="margin:0">
 		<center>
-			<br>
+			<br><script> document.write(menu());</script>
 			<form name="form1" method="post" action="jumun.php">
 			<input type="hidden" name="page" value="<?php echo $page?>">
 			<table width="800" border="0" cellspacing="0" cellpadding="0">
