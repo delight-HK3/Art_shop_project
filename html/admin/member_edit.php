@@ -14,7 +14,6 @@
 				window.open("zipcode.php?zip_kind="+zip_kind, "", "scrollbars=no,width=500,height=250");
 			}
 		</script>
-		<script> document.write(menu());</script>
 	</head>
 	<?php
 		$query="select * from member where no11 = $no;";
@@ -38,7 +37,7 @@
 	?>
 	<body style="margin:0">
 		<center>
-			<br><br><br>
+			<br><script> document.write(menu());</script><br><br>
 				<form name="form2" method="post" action="member_update.php">
 					<input type="hidden" name="no" value="<?php echo $no?>">
 						<table width="600" border="1" cellpadding="2"  style="border-collapse:collapse">
