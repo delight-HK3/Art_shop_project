@@ -1,7 +1,7 @@
 # Art shop project
 
 >사용한 프레임워크 : bootstrap 3<br>
->사용한 언어 : php7, javascript, css<br>
+>사용한 언어 : php7, javascript, css3<br>
 >사용한 DB : mariaDB<br>
 >사용한 DBMS : phpMyAdmin<br>
 >사용한 Tool : Visual Studio Code<br>
