@@ -6,6 +6,7 @@
 >사용한 DBMS : phpMyAdmin<br>
 >사용한 서버 : Apache server<br>
 >사용한 Tool : Visual Studio Code<br>
+>테스트한 OS : Window 10<br>
 <br>
 
 ### 프로젝트 분류 : 개별 프로젝트
